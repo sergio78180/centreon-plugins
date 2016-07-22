@@ -145,6 +145,9 @@ sub run {
                                           critical => $self->{perfdata}->get_perfdata_for_output(label => 'critical', total => $volumeSize, cast_int => 1),
                                           min => 0,
                                           max => $volumeSize);
+            $self->{output}->perfdata_add(label => 'size_'.$volumeName,
+                                          unit => 'B',
+                                          value => $volumeSize);
         }
     }
 
